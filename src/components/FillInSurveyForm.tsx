@@ -97,10 +97,10 @@ const SurveyForm: React.FC = () => {
         severity: 'success'
       });
       setResponses(survey!.questions.map(q => ({ question_id: q.id, answer: '' })));
-      // Delay redirect for 2 seconds
+      // Delay redirect for 1 second
       setTimeout(() => {
         navigate('/survey-results');
-      }, 2_000);
+      }, 1_000);
     } catch (error) {
       console.error('Error submitting survey:', error);
       setSnackbar({

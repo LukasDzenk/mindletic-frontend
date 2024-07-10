@@ -3,6 +3,7 @@ import React from 'react'
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import CreateFormPage from './pages/create-survey/CreateSurveyPage'
 import FillInSurveyPage from './pages/fill-in-survey/FillInSurveyPage'
+import SurveyResults from './components/SurveyResults'
 
 const HomePage: React.FC = () => (
   <Container>
@@ -14,6 +15,9 @@ const HomePage: React.FC = () => (
     </Button>
     <Button component={Link} to="/fill-in-form" variant="contained" color="primary" sx={{ ml: 2 }}>
       Fill In Feedback Form
+    </Button>
+    <Button component={Link} to="/survey-results" variant="contained" color="primary" sx={{ ml: 2 }}>
+      View Survey Results
     </Button>
   </Container>
 );
@@ -35,6 +39,9 @@ const App: React.FC = () => {
           <Button color="inherit" component={Link} to="/fill-in-form">
             Fill In Form
           </Button>
+          <Button color="inherit" component={Link} to="/survey-results">
+            Survey Results
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -42,6 +49,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/create-form" element={<CreateFormPage />} />
         <Route path="/fill-in-form" element={<FillInSurveyPage />} />
+        <Route path="/survey-results" element={<SurveyResults />} />
       </Routes>
     </Router>
   );
